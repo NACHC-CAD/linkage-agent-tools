@@ -11,6 +11,8 @@ client = MongoClient(c.mongo_uri)
 database = client.linkage_agent
 SLEEP_TIME = 0.5
 
+print("Starting match.py")
+print(Path(c.household_schema).resolve())
 if c.household_match:
     with open(Path(c.household_schema)) as schema_file:
         household_schema = schema_file.read()
