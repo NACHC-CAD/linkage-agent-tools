@@ -6,11 +6,15 @@ from pymongo import MongoClient
 from dcctools.anonlink import Results, Project
 from dcctools.config import Configuration
 
+
 def match():
     c = Configuration("config.json")
     client = MongoClient(c.mongo_uri)
     database = client.linkage_agent
     SLEEP_TIME = 0.5
+
+    print("Starting match.py")
+    print("File path is: \n" + str(Path(c.household_schema).resolve()))
 
     if c.household_match:
         with open(Path(c.household_schema)) as schema_file:
