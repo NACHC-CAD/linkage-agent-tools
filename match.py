@@ -15,6 +15,7 @@ def match():
 
     print("Starting match.py")
     print("File path is: \n" + str(Path(c.household_schema).resolve()))
+
     if c.household_match:
         with open(Path(c.household_schema)) as schema_file:
             household_schema = schema_file.read()
