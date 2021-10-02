@@ -8,7 +8,11 @@ from dcctools.config import Configuration
 
 
 def match():
-    c = Configuration("config.json")
+    config = Configuration("config.json")
+    match(config)
+
+
+def match(c):
     client = MongoClient(c.mongo_uri)
     database = client.linkage_agent
     SLEEP_TIME = 0.5

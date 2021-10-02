@@ -1,1 +1,24 @@
-{"systems": ["hospital_001-JOHNS_TEST", "hospital_002-JOHNS_TEST", "hospital_003-JOHNS_TEST"], "projects": ["name-sex-dob-phone", "name-sex-dob-zip", "name-sex-dob-parents", "name-sex-dob-addr"], "schema_folder": "C:\\Users\\greshje\\Downloads\\OLD\\PPRL_CONNECT\\Activity-2\\DCCExectuable\\example-schema", "inbox_folder": "C:\\Users\\greshje\\Downloads\\OLD\\PPRL_CONNECT\\Activity-2\\DCCExectuable\\inbox", "matching_results_folder": "C:\\Users\\greshje\\Downloads\\OLD\\PPRL_CONNECT\\Activity-2\\DCCExectuable\\output", "output_folder": "C:\\Users\\greshje\\Downloads\\OLD\\PPRL_CONNECT\\Activity-2\\DCCExectuable\\output", "entity_service_url": "http://localhost:8851/api/v1", "matching_threshold": 0.75, "mongo_uri": "localhost:27017", "blocked": false, "blocking_schema": "./tests/envs/household/schema/name-sex-dob-addr.json", "household_match": false, "household_schema": "./tests/envs/household/schema/name-sex-dob-parents.json"}
+{
+  "systems": [
+    "hospital_001-JOHNS_TEST",
+    "hospital_002-JOHNS_TEST",
+    "hospital_003-JOHNS_TEST"
+  ],
+  "projects": [
+    "name-sex-dob-phone",
+    "name-sex-dob-zip",
+    "name-sex-dob-parents",
+    "name-sex-dob-addr"
+  ],
+  "schema_folder": "C:\\Users\\greshje\\Downloads\\OLD\\PPRL_CONNECT\\Activity-2\\DCCExectuable\\example-schema",
+  "inbox_folder": "C:\\Users\\greshje\\Downloads\\OLD\\PPRL_CONNECT\\Activity-2\\DCCExectuable\\inbox",
+  "matching_results_folder": "C:\\Users\\greshje\\Downloads\\OLD\\PPRL_CONNECT\\Activity-2\\DCCExectuable\\output",
+  "output_folder": "C:\\Users\\greshje\\Downloads\\OLD\\PPRL_CONNECT\\Activity-2\\DCCExectuable\\output",
+  "entity_service_url": "http://localhost:8851/api/v1",
+  "matching_threshold": 0.75,
+  "mongo_uri": "localhost:27017",
+  "blocked": false,
+  "blocking_schema": "./tests/envs/household/schema/name-sex-dob-addr.json",
+  "household_match": false,
+  "household_schema": "./tests/envs/household/schema/name-sex-dob-parents.json"
+}

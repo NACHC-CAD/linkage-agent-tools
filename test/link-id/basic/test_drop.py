@@ -1,10 +1,10 @@
-import util.config.config_util as cu
 import util.linkage_agent.linkage_agent_util as lau
+import util.config.config_util as cu
 
 
-def test_validate():
-    print("\nStarting test...")
+def test_drop():
+    print("\nStarting tests...")
     config = cu.get_config("test/link-id/basic/config.json")
-    lau.validate(config)
+    lau.drop(config)
     print("Done.")
 
