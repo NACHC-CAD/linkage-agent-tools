@@ -3,10 +3,10 @@ from dcctools.config import Configuration
 
 def validate():
     config = Configuration("config.json")
-    validate(config)
+    return do_validate(config)
 
 
-def validate(c):
+def do_validate(c):
     missing_files = c.validate_all_present()
     if len(missing_files) == 0:
         print("All necessary input is present")

@@ -20,7 +20,7 @@ def get_config_json_obj(file_name):
 
 def get_config(file_name):
     json_obj = get_config_json_obj(file_name)
-    config = Configuration()
+    config = Configuration(None)
     config.init(json_obj)
     return config
 

@@ -4,7 +4,7 @@ import match as m
 
 
 def validate(config):
-    val.validate(config)
+    val.do_validate(config)
 
 
 def drop(config):
@@ -16,4 +16,5 @@ def drop(config):
 
 
 def match(config):
-    m.match(config)
+    m.do_match(config)
+
