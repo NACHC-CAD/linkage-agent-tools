@@ -11,6 +11,12 @@ class Configuration:
         self.filename = filename
         self.config_json = json.load(open(filename))
 
+    def __init__(self):
+        self.filename = ""
+
+    def init(self, json_obj):
+        self.config_json = json_obj
+
     @property
     def system_count(self):
         return len(self.config_json["systems"])
