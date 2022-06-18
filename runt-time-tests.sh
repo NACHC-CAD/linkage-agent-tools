@@ -1,0 +1,1 @@
+python3 -u time_test.py --dir $0 | tee time-test.log
