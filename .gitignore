@@ -140,3 +140,8 @@ temp-data/*
 
 # PyCharm settings
 .idea/
+
+# Ignore log files
+log/
+
+
