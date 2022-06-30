@@ -15,7 +15,7 @@
     "name-sex-dob-zip"
   ],
   "schema_folder": "/home/ubuntu/_TEST/test-set-large/schema",
-  "inbox_folder": "/home/ubuntu/_TEST/test-set-large/inbox",
+  "inbox_folder": "/home/ubuntu/_TEST/test-set-large/patients/patients-0001",
   "matching_results_folder": "/home/ubuntu/_TEST/test-set-large/output",
   "project_results_folder": "/home/ubuntu/_TEST/test-set-large/project-output",
   "output_folder": "/home/ubuntu/_TEST/test-set-large/test-output",
