@@ -50,7 +50,7 @@ def do_link_ids(c, remove=False):
     sys_cnt = 0
     for system in systems:
         sys_cnt = sys_cnt + 1
-        print("processing system: " + str(sys_cnt) + str(len(systems)))
+        print("processing system: " + str(sys_cnt) + " of " + str(len(systems)))
         if c.household_match:
             household_clk_json = c.get_household_clks_raw(system, "fn-phone-addr-zip")
             h_clks = json.loads(household_clk_json)
@@ -102,15 +102,15 @@ def do_link_ids(c, remove=False):
                         cnt = cnt + 1
                         # log how often we're logging
                         if cnt == 10:
-                            print("counting by 1000")
+                            print("counting by 10")
                         if cnt == 100000:
-                            print("counting by 10000")
+                            print("counting by 100")
                         # log row count
                         if cnt < 10:
                             print("processing row " + str(cnt))
-                        elif cnt < 100000 & cnt % 1000 == 0:
+                        elif cnt < 100000 & cnt % 10 == 0:
                             print("processing row " + str(cnt))
-                        elif cnt % 10000 == 0:
+                        elif cnt % 100 == 0:
                             print("processing row " + str(cnt))
                         # refresh the session if it's been more than 5 minutes
                         # https://www.mongodb.com/docs/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
