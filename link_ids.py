@@ -15,6 +15,7 @@ from dcctools.deconflict import deconflict
 
 
 def parse_args():
+    print("Parsing args...")
     parser = argparse.ArgumentParser(
         description="Tool for generating LINK_IDs in the CODI PPRL process"
     )
@@ -34,9 +35,10 @@ def parse_args():
 
 
 def do_link_ids(c, remove=False):
+    print("Running link ids...")
     client = MongoClient(c.mongo_uri)
     database = client.linkage_agent
-
+    print("Config file: " + str(c.config_json))
     systems = c.systems
     header = ["LINK_ID"]
     header.extend(systems)
@@ -92,7 +94,20 @@ def do_link_ids(c, remove=False):
                     session=session, no_cursor_timeout=True
                 ) as cursor:
                     refresh_timestamp = datetime.datetime.now()
+                    cnt = 0
                     for row in cursor:
+                        # log how often we're logging
+                        if cnt == 10:
+                            print("counting by 1000")
+                        if cnt == 100000:
+                            print("counting by 10000")
+                        # log row count
+                        if cnt < 10:
+                            print("processing row " + str(cnt))
+                        elif cnt < 100000 & cnt % 1000 == 0:
+                            print("processing row " + str(cnt))
+                        elif cnt % 10000 == 0:
+                            print("processing row " + str(cnt))
                         # refresh the session if it's been more than 5 minutes
                         # https://www.mongodb.com/docs/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
                         if (datetime.datetime.now() - refresh_timestamp).seconds > 300:
