@@ -102,8 +102,6 @@ def do_link_ids(c, remove=False):
                         cnt = cnt + 1
                         # log how often we're logging
                         if cnt == 10:
-                            print("counting by 10")
-                        if cnt == 100000:
                             print("counting by 100")
                         # log row count
                         if cnt < 10:
