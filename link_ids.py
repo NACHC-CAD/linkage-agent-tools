@@ -38,7 +38,7 @@ def do_link_ids(c, remove=False):
     print("Running link ids...")
     client = MongoClient(c.mongo_uri)
     database = client.linkage_agent
-    print("Config file: " + str(c.config_json))
+    print("Config file: \n" + str(c.config_json))
     systems = c.systems
     header = ["LINK_ID"]
     header.extend(systems)
@@ -47,7 +47,10 @@ def do_link_ids(c, remove=False):
     all_ids_for_households = {}
     first_project = c.projects[0]
     individual_linkages = []
+    sys_cnt = 0
     for system in systems:
+        sys_cnt = sys_cnt + 1
+        print("processing system: " + str(sys_cnt) + str(len(systems)))
         if c.household_match:
             household_clk_json = c.get_household_clks_raw(system, "fn-phone-addr-zip")
             h_clks = json.loads(household_clk_json)
@@ -96,6 +99,7 @@ def do_link_ids(c, remove=False):
                     refresh_timestamp = datetime.datetime.now()
                     cnt = 0
                     for row in cursor:
+                        cnt = cnt + 1
                         # log how often we're logging
                         if cnt == 10:
                             print("counting by 1000")
