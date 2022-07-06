@@ -25,7 +25,7 @@ def process_csv(csv_path, system_csv_path, system):
             writer = csv.DictWriter(system_csvfile, fieldnames=["LINK_ID", system])
             writer.writeheader()
             cnt = 0
-            inc = 100000
+            inc = 500000
             print("Counting by " + str(inc))
             for row in reader:
                 cnt = cnt + 1
