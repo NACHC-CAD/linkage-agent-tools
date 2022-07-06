@@ -28,6 +28,7 @@ def process_csv(csv_path, system_csv_path, system):
             inc = 10000
             print("Counting by " + str(inc))
             for row in reader:
+                cnt = cnt + 1
                 if cnt % inc == 0:
                     print("Row " + str(cnt))
                 if len(row[system]) > 0:
@@ -42,15 +43,15 @@ def do_data_owner_ids(c):
         csv_path = Path(c.matching_results_folder) / "link_ids.csv"
 
     cnt = 0
-    print("CSV Path: " + csv_path)
+    print("CSV Path: " + str(csv_path))
     for system in c.systems:
         cnt = cnt + 1
-        print("Processing system " + str(cnt) + " of " + len(c.systems))
+        print("Processing system " + str(cnt) + " of " + str(len(c.systems)))
         if c.household_match:
             system_csv_path = Path(c.output_folder) / "{}_households.csv".format(system)
         else:
             system_csv_path = Path(c.output_folder) / "{}.csv".format(system)
-        print("Creating: " + csv_path)
+        print("Creating: " + str(csv_path))
         process_csv(csv_path, system_csv_path, system)
         print(f"{system_csv_path} created")
 
