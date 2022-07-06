@@ -60,3 +60,4 @@ if __name__ == "__main__":
     args = parse_args()
     config = Configuration(args.config)
     do_data_owner_ids(config)
+    print("Done.")
