@@ -24,9 +24,15 @@ def process_csv(csv_path, system_csv_path, system):
         with open(system_csv_path, "w", newline="") as system_csvfile:
             writer = csv.DictWriter(system_csvfile, fieldnames=["LINK_ID", system])
             writer.writeheader()
+            cnt = 0
+            inc = 10000
+            print("Counting by " + str(inc))
             for row in reader:
+                if cnt % inc == 0:
+                    print("Row " + str(cnt))
                 if len(row[system]) > 0:
                     writer.writerow({"LINK_ID": row["LINK_ID"], system: row[system]})
+            print("Done processing rows.")
 
 
 def do_data_owner_ids(c):
@@ -35,11 +41,16 @@ def do_data_owner_ids(c):
     else:
         csv_path = Path(c.matching_results_folder) / "link_ids.csv"
 
+    cnt = 0
+    print("CSV Path: " + csv_path)
     for system in c.systems:
+        cnt = cnt + 1
+        print("Processing system " + str(cnt) + " of " + len(c.systems))
         if c.household_match:
             system_csv_path = Path(c.output_folder) / "{}_households.csv".format(system)
         else:
             system_csv_path = Path(c.output_folder) / "{}.csv".format(system)
+        print("Creating: " + csv_path)
         process_csv(csv_path, system_csv_path, system)
         print(f"{system_csv_path} created")
 
